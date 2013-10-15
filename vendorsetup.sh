@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,5 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_i9100g.mk \
-    $(LOCAL_DIR)/custom_i9100g.mk
+add_lunch_combo full_i9100g-userdebug
+add_lunch_combo custom_i9100g-userdebug
