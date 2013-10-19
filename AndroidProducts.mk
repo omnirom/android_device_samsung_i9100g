@@ -16,4 +16,4 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_i9100g.mk \
-    $(LOCAL_DIR)/custom_i9100g.mk
+    $(LOCAL_DIR)/omni_i9100g.mk

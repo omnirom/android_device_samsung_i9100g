@@ -13,6 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, device/samsung/i9100g/custom_i9100g.mk)
+$(call inherit-product, device/samsung/i9100g/full_i9100g.mk)
 
 PRODUCT_NAME := aosp_i9100g

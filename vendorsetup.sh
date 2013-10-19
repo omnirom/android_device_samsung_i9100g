@@ -15,4 +15,4 @@
 #
 
 add_lunch_combo full_i9100g-userdebug
-add_lunch_combo custom_i9100g-userdebug
+add_lunch_combo omni_i9100g-userdebug
