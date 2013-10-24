@@ -29,6 +29,7 @@ PRODUCT_LOCALES += hdpi
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.t1:root/fstab.t1 \
+    $(LOCAL_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(LOCAL_PATH)/rootdir/init.t1.usb.rc:root/init.t1.usb.rc \
     $(LOCAL_PATH)/rootdir/init.t1.rc:root/init.t1.rc \
     $(LOCAL_PATH)/rootdir/ueventd.t1.rc:root/ueventd.t1.rc

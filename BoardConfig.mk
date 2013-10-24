@@ -125,6 +125,10 @@ TARGET_OTA_ASSERT_DEVICE := i9100g,GT-I9100G
 # device-specific extensions to the updater binary
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/i9100g
 
+# TWRP
+DEVICE_RESOLUTION := 480x800
+TW_HAS_NO_RECOVERY_PARTITION := true
+
 # Releasetools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/i9100g/releasetools/t1_ota_from_target_files
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/i9100g/releasetools/t1_img_from_target_files
