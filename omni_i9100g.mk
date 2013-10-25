@@ -14,14 +14,12 @@
 # limitations under the License.
 #
 
-# Get the long list of APNs
-PRODUCT_COPY_FILES := vendor/omni/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
-
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/samsung/i9100g/device.mk)
