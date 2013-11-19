@@ -15,15 +15,6 @@
 -->
 
 <resources>
-    <!-- LED Flashlight -->
-    <bool name="has_led_flash">true</bool>
-
-    <!-- Dock Settings -->
-    <bool name="has_dock_settings">true</bool>
-
-    <!-- Volume Rocker Wake -->
-    <bool name="config_show_volumeRockerWake">true</bool>
-
-    <!-- Home button wake support -->
-    <bool name="config_show_homeWake">true</bool>
+    <!-- Must be true to display button settings -->
+    <bool name="config_device_has_button_settings" translatable="false">true</bool>
 </resources>
