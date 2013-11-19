@@ -4,12 +4,12 @@ on init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
     mkdir /storage 0775 system system
-    mkdir /storage/sdcard0 0775 system system
-    mkdir /storage/sdcard1 0775 system system
-    mkdir /storage/usbdisk0 0775 system system
-    mkdir /mnt/media_rw/sdcard0 0775 system system
-    mkdir /mnt/media_rw/sdcard1 0775 system system
-    mkdir /mnt/media_rw/usbdisk0 0775 system system
+    mkdir /storage/sdcard0 0700 root root
+    mkdir /storage/sdcard1 0700 root root
+    mkdir /storage/usbdisk0 0700 root root
+    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    mkdir /mnt/media_rw/usbdisk0 0700 media_rw media_rw
     mkdir /efs 0771 radio system
     mkdir /preload 0771 system system
     mkdir /mnt/.lfs 0755 root root
