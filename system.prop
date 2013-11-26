@@ -5,3 +5,9 @@
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/ttyS0
 ro.sf.lcd_density=240
+
+ro.device.cpu=1.2 GHz dual-core
+ro.device.gpu=PowerVR SGX540
+ro.device.rear_cam=8 MP
+ro.device_front_cam=2 MP
+ro.device.screen_res=4.3 inch 480x800 pixels
