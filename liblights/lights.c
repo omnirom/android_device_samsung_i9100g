@@ -103,7 +103,7 @@ static int set_light_backlight(struct light_device_t *dev,
     int previous_brightness = read_int(LCD_FILE);
 
 	pthread_mutex_lock(&g_lock);
-    ALOGD("set_light_backlight brightness=%d\n", brightness);
+    ALOGV("set_light_backlight brightness=%d\n", brightness);
 	err = write_int(LCD_FILE, brightness);
 
     if (!previous_brightness && (brightness > 0)) {
