@@ -108,6 +108,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072
 
+# SGX540 is slower with the scissor optimization enabled
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hwui.disable_scissor_opt=true
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
 
