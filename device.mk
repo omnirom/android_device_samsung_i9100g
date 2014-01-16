@@ -65,8 +65,10 @@ PRODUCT_PACKAGES += \
     GalaxyS2Settings \
     hwcomposer.t1 \
     lights.t1 \
+    OmniTorch \
     power.t1 \
-    OmniTorch
+    SamsungServiceMode \
+
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
