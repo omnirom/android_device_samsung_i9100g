@@ -67,7 +67,7 @@ PRODUCT_PACKAGES += \
     lights.t1 \
     OmniTorch \
     power.t1 \
-    SamsungServiceMode \
+    SamsungServiceMode
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
