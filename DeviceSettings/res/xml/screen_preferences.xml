@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2012 The CyanogenMod Project
+     Copyright (C) 2014 The OmniROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,14 +18,14 @@
     <PreferenceCategory
                 android:title="@string/screen_colors_title">
         <!-- CABC -->
-    <com.cyanogenmod.settings.device.CABC
+    <org.omnirom.device.CABC
                 android:key="cabc"
                 android:title="@string/cabc_title_head"
                 android:summary="@string/cabc_summary_head"
                 android:defaultValue="true" />
 
         <!-- Panel gamma -->
-        <com.cyanogenmod.settings.device.PanelGamma
+        <org.omnirom.device.PanelGamma
                 android:key="panel_gamma"
                 android:title="@string/panel_gamma_title_head"
                 android:summary="@string/panel_gamma_summary_head"
@@ -36,7 +37,7 @@
     <!-- Touchscreen -->
     <PreferenceCategory
                 android:title="@string/touchscreen_subcat_title">
-    <com.cyanogenmod.settings.device.TouchscreenSensitivity
+    <org.omnirom.device.TouchscreenSensitivity
                 android:key="touchscreen_sensitivity"
                 android:title="@string/touchscreen_sensitivity_title_head"
                 android:summary="@string/touchscreen_sensitivity_summary_head"
@@ -55,7 +56,7 @@
                 android:entries="@array/touchkey_led_mode_entries"
                 android:entryValues="@array/touchkey_led_mode_entries_values"
                 android:defaultValue="1" />
-    <com.cyanogenmod.settings.device.TouchkeyTimeout
+    <org.omnirom.device.TouchkeyTimeout
                 android:key="touchkey_timeout"
                 android:title="@string/touchkey_timeout_title_head"
                 android:summary="@string/touchkey_timeout_summary_head"

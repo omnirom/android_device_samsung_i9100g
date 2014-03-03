@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2014 The OmniROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,31 +15,32 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
+import java.io.IOException;
 import android.content.Context;
+import android.util.AttributeSet;
 import android.content.SharedPreferences;
-import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
-import android.util.AttributeSet;
 
-public class CABC extends CheckBoxPreference implements OnPreferenceChangeListener {
+public class TouchkeyTimeout extends ListPreference implements OnPreferenceChangeListener {
 
-    public CABC(Context context, AttributeSet attrs) {
+    public TouchkeyTimeout(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOnPreferenceChangeListener(this);
     }
 
-    private static final String FILE = "/sys/class/lcd/panel/power_reduce";
+    private static final String FILE_TOUCHKEY_TIMEOUT = "/sys/class/sec/sec_touchkey/timeout";
 
     public static boolean isSupported() {
-        return Utils.fileExists(FILE);
+        return Utils.fileExists(FILE_TOUCHKEY_TIMEOUT);
     }
 
     /**
-     * Restore cabc setting from SharedPreferences. (Write to kernel.)
+     * Restore touchscreen sensitivity setting from SharedPreferences. (Write to kernel.)
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
@@ -47,11 +49,11 @@ public class CABC extends CheckBoxPreference implements OnPreferenceChangeListen
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getBoolean(DeviceSettings.KEY_CABC, true) ? "1" : "0");
+        Utils.writeValue(FILE_TOUCHKEY_TIMEOUT, sharedPrefs.getString(DeviceSettings.KEY_TOUCHKEY_TIMEOUT, "3"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Utils.writeValue(FILE, (Boolean)newValue ? "1" : "0");
+        Utils.writeValue(FILE_TOUCHKEY_TIMEOUT, (String) newValue);
         return true;
     }
 

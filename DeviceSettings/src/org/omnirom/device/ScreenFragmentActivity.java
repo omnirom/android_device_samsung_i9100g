@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2014 The OmniROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -29,7 +30,7 @@ import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
-import com.cyanogenmod.settings.device.R;
+import org.omnirom.device.R;
 
 public class ScreenFragmentActivity extends PreferenceFragment implements OnPreferenceChangeListener {
 

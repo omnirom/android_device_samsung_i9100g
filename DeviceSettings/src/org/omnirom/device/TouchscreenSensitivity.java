@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2014 The OmniROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,34 +15,32 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
+import java.io.IOException;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.util.AttributeSet;
-import android.preference.ListPreference;
+import android.content.SharedPreferences;
 import android.preference.Preference;
+import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class Hspa extends ListPreference implements OnPreferenceChangeListener {
+public class TouchscreenSensitivity extends ListPreference implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/system/app/SamsungServiceMode.apk";
-    private Context mCtx;
-
-    public Hspa(Context context, AttributeSet attrs) {
+    public TouchscreenSensitivity(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOnPreferenceChangeListener(this);
-        mCtx = context;
     }
+
+    private static final String FILE = "/sys/class/sec/sec_touchscreen/tsp_threshold";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
     }
 
     /**
-     * Restore hspa setting from SharedPreferences. (Write to kernel.)
+     * Restore touchscreen sensitivity setting from SharedPreferences. (Write to kernel.)
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
@@ -50,18 +49,12 @@ public class Hspa extends ListPreference implements OnPreferenceChangeListener {
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        sendIntent(context, sharedPrefs.getString(DeviceSettings.KEY_HSPA, "23"));
+        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY, "40"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        sendIntent(mCtx, (String) newValue);
+        Utils.writeValue(FILE, (String) newValue);
         return true;
     }
 
-    private static void sendIntent(Context context, String value) {
-        Intent i = new Intent("com.cyanogenmod.SamsungServiceMode.EXECUTE");
-        i.putExtra("sub_type", 20); // HSPA Setting
-        i.putExtra("data", value);
-        context.sendBroadcast(i);
-    }
 }

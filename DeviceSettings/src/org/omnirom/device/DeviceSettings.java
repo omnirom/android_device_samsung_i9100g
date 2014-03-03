@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2014 The OmniROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -27,14 +28,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.cyanogenmod.settings.device.R;
+import org.omnirom.device.R;
 
 import java.util.ArrayList;
 
 public class DeviceSettings extends FragmentActivity {
 
-    public static final String SHARED_PREFERENCES_BASENAME = "com.cyanogenmod.settings.device";
-    public static final String ACTION_UPDATE_PREFERENCES = "com.cyanogenmod.settings.device.UPDATE";
+    public static final String SHARED_PREFERENCES_BASENAME = "org.omnirom.device";
+    public static final String ACTION_UPDATE_PREFERENCES = "org.omnirom.device.UPDATE";
     public static final String KEY_HSPA = "hspa";
     public static final String KEY_CABC = "cabc";
     public static final String KEY_PANEL_GAMMA = "panel_gamma";

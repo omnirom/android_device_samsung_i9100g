@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2014 The OmniROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
+import android.app.ActivityManagerNative;
 import android.content.Context;
-import android.content.res.Resources;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.ListPreference;
+import android.os.UserHandle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
@@ -28,45 +31,46 @@ import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
-import com.cyanogenmod.settings.device.R;
+import org.omnirom.device.R;
 
-public class HapticFragmentActivity extends PreferenceFragment {
+public class DockFragmentActivity extends PreferenceFragment {
 
-    private static final String TAG = "GalaxyS2Settings_Haptic";
-    public static final String KEY_VIBRATOR_TUNING = "vibrator_tuning";
-
-    private static boolean sVibratorTuning;
-    private VibratorTuningPreference mVibratorTuning;
+    private static final String PREF_ENABLED = "1";
+    private static final String TAG = "GalaxyS2Parts_General";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Resources res = getResources();
-        sVibratorTuning = res.getBoolean(R.bool.has_vibrator_tuning);
+        addPreferencesFromResource(R.xml.dock_preferences);
+        PreferenceScreen prefSet = getPreferenceScreen();
 
-        addPreferencesFromResource(R.xml.haptic_preferences);
-
-        if (sVibratorTuning) {
-            String vibratorFilePath = res.getString(R.string.vibrator_sysfs_file);
-            mVibratorTuning = (VibratorTuningPreference) findPreference(KEY_VIBRATOR_TUNING);
-            mVibratorTuning.setEnabled(VibratorTuningPreference.isSupported(vibratorFilePath));
-        }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+
         String boxValue;
         String key = preference.getKey();
-        Log.w(TAG, "key: " + key);
-        return true;
-    }
 
-    public static boolean isSupported(String FILE) {
-        return Utils.fileExists(FILE);
+        Log.w(TAG, "key: " + key);
+
+        if (key.compareTo(DeviceSettings.KEY_USE_DOCK_AUDIO) == 0) {
+            boxValue = (((CheckBoxPreference)preference).isChecked() ? "1" : "0");
+            Intent i = new Intent("org.omnirom.SamsungDock");
+            i.putExtra("data", boxValue);
+            ActivityManagerNative.broadcastStickyIntent(i, null, UserHandle.USER_ALL);
+        }
+
+        return true;
     }
 
     public static void restore(Context context) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean dockAudio = sharedPrefs.getBoolean(DeviceSettings.KEY_USE_DOCK_AUDIO, false);
+        Intent i = new Intent("org.omnirom.SamsungDock");
+        i.putExtra("data", (dockAudio? "1" : "0"));
+        ActivityManagerNative.broadcastStickyIntent(i, null, UserHandle.USER_ALL);
     }
+
 }
