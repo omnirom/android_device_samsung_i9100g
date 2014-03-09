@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b77b57d_07ff16fc",
+        "filename": "vendorsetup.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000032
+      },
+      "writtenOn": "2014-03-09T23:42:16Z",
+      "side": 0,
+      "message": "There\u0027s no harm in keeping the copyright notice here IMO.",
+      "revId": "0d607c58419e53969bb7104ff7fac43bdab3d4f6",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
