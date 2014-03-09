@@ -16,6 +16,24 @@
       "revId": "0d607c58419e53969bb7104ff7fac43bdab3d4f6",
       "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b77b57d_870b2625",
+        "filename": "vendorsetup.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000758
+      },
+      "writtenOn": "2014-03-09T23:55:44Z",
+      "side": 0,
+      "message": "There is no point for a copyright notice on a one line file, especially what this does IMO. Addiitonally most of the device repos don\u0027t include a copyright notice on this file.",
+      "parentUuid": "8b77b57d_07ff16fc",
+      "revId": "0d607c58419e53969bb7104ff7fac43bdab3d4f6",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
     }
   ]
 }

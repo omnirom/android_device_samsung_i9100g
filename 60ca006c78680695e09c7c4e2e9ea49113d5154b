@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8b77b57d_47090e2e",
+        "filename": "omni_i9100g.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000758
+      },
+      "writtenOn": "2014-03-09T23:55:44Z",
+      "side": 1,
+      "message": "To match stock.",
+      "parentUuid": "8b77b57d_c408bc31",
+      "revId": "60ca006c78680695e09c7c4e2e9ea49113d5154b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b77b57d_e7f93a19",
         "filename": "omni_i9100g.mk",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-09T23:42:16Z",
       "side": 1,
       "message": "XXLSR and DXLS8 are basically equivalent in terms of \"newness\". We went with XXLSR due to it being the Open Europe signature while DXLS8 is specifically for parts of Southern Asia.",
+      "revId": "60ca006c78680695e09c7c4e2e9ea49113d5154b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b77b57d_670e0a38",
+        "filename": "omni_i9100g.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000758
+      },
+      "writtenOn": "2014-03-09T23:55:44Z",
+      "side": 1,
+      "message": "I can see your point. I\u0027ll revert this in a patchset.",
+      "parentUuid": "8b77b57d_e7f93a19",
       "revId": "60ca006c78680695e09c7c4e2e9ea49113d5154b",
       "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
       "unresolved": false
