@@ -54,7 +54,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
          version_major: 1,
          version_minor: 0,
          id: CAMERA_HARDWARE_MODULE_ID,
-         name: "Exynos4x12 Camera Wrapper",
+         name: "T1 Camera Wrapper",
          author: "Teamhacksung <info@teamhacksung.org>",
          methods: &camera_module_methods,
          dso: NULL, /* remove compilation warnings */
@@ -85,7 +85,7 @@ static int check_vendor_module()
     if(gVendorModule)
         return 0;
 
-    rv = hw_get_module("vendor-camera", (const hw_module_t **)&gVendorModule);
+    rv = hw_get_module_by_class("camera", "vendor", (const hw_module_t **)&gVendorModule);
     if (rv)
         ALOGE("failed to open vendor camera module");
     return rv;
