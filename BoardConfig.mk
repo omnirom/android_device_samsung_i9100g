@@ -144,6 +144,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/i9100g
 # TWRP
 DEVICE_RESOLUTION := 480x800
 TW_HAS_NO_RECOVERY_PARTITION := true
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 
 # Releasetools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/i9100g/releasetools/t1_ota_from_target_files
