@@ -1,4 +1,5 @@
 import init.t1.usb.rc
+import /init.target.rc
 
 on init
     export EXTERNAL_STORAGE /storage/sdcard0
