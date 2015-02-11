@@ -3481,6 +3481,9 @@ static int adev_set_mic_mute(struct audio_hw_device *dev, bool state)
 {
     struct t1_audio_device *adev = (struct t1_audio_device *)dev;
 
+    if (adev->mode == AUDIO_MODE_IN_CALL)
+            ril_set_mic_mute(&adev->ril, state);
+
     adev->mic_mute = state;
 
     return 0;
