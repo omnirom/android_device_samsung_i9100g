@@ -80,7 +80,3 @@ system/usr/keylayout/sii9234_rcp.kl
 system/usr/keylayout/t1-gpio-keypad.kl
 system/usr/keylayout/t1-gpio-keys.kl
 system/vendor/firmware/ducati-m3.bin
-system/vendor/lib/drm/libdrmwvmplugin.so
-system/vendor/lib/libWVStreamControlAPI_L1.so
-system/vendor/lib/libwvdrm_L1.so
-system/vendor/lib/libwvm.so
