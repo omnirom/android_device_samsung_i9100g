@@ -25,6 +25,11 @@ on init
     # Preload libjhead for camera
     export LD_PRELOAD /system/lib/libjhead.so
 
+    # KSM
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
+
     chmod 0666 /dev/pvrsrvkm
 
 on fs
