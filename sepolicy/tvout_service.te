@@ -1,0 +1,7 @@
+# TV Out
+type tvout, domain;
+type tvout_exec, exec_type, file_type;
+
+init_daemon_domain(tvout)
+
+allow tvout self:process { execmem };

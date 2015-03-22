@@ -1,0 +1,5 @@
+# For Device settings
+allow system_app sysfs_writable:file rw_file_perms;
+allow system_app efs_file:dir { search };
+allow system_app system_app_data_file:file x_file_perms;
+allow system_app compass_calibration_file:file rw_file_perms;
