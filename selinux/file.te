@@ -1,1 +1,2 @@
-type firmware_ducati, file_type;
+# Filesystem types
+type compass_calibration_file, file_type, data_file_type;
