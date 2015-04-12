@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b1f7d45_e4085a2d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000032
+      },
+      "writtenOn": "2015-04-12T17:45:26Z",
+      "side": 1,
+      "message": "i9100g is hdpi.",
+      "revId": "d2844f5f0709ecf0243d4ae2e4a37e9a685fa662",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
