@@ -20,6 +20,7 @@ package org.omnirom.device;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.util.AttributeSet;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -28,7 +29,7 @@ import android.preference.PreferenceManager;
 
 public class Hspa extends ListPreference implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/system/app/SamsungServiceMode.apk";
+    private static final String SERVICE_MODE_PACKAGE = "org.omnirom.samsungservicemode";
     private Context mCtx;
 
     public Hspa(Context context, AttributeSet attrs) {
@@ -37,8 +38,17 @@ public class Hspa extends ListPreference implements OnPreferenceChangeListener {
         mCtx = context;
     }
 
-    public static boolean isSupported() {
-        return Utils.fileExists(FILE);
+    public static boolean isSupported(Context context) {
+        boolean hasServiceMode;
+        PackageManager pm = context.getPackageManager();
+        try {
+            pm.getPackageInfo(SERVICE_MODE_PACKAGE, PackageManager.GET_ACTIVITIES);
+            hasServiceMode = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            hasServiceMode = false;
+        }
+
+        return hasServiceMode;
     }
 
     /**
@@ -46,7 +56,7 @@ public class Hspa extends ListPreference implements OnPreferenceChangeListener {
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
-        if (!isSupported()) {
+        if (!isSupported(context)) {
             return;
         }
 
@@ -60,7 +70,8 @@ public class Hspa extends ListPreference implements OnPreferenceChangeListener {
     }
 
     private static void sendIntent(Context context, String value) {
-        Intent i = new Intent("com.cyanogenmod.SamsungServiceMode.EXECUTE");
+        Intent i = new Intent("org.omnirom.SamsungServiceMode.EXECUTE");
+        i.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         i.putExtra("sub_type", 20); // HSPA Setting
         i.putExtra("data", value);
         context.sendBroadcast(i);

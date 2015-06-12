@@ -44,6 +44,8 @@ public class RadioFragmentActivity extends PreferenceFragment {
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
+        Hspa mHspa = (Hspa) findPreference(DeviceSettings.KEY_HSPA);
+        mHspa.setEnabled(Hspa.isSupported(getActivity()));
     }
 
     @Override
