@@ -126,7 +126,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.disable_scissor_opt=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.render_dirty_regions=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
