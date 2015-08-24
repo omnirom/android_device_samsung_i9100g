@@ -17,6 +17,8 @@
 
 -include device/samsung/omap4-common/BoardConfigCommon.mk
 
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/i9100g/include
+
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 USE_CAMERA_STUB := true
